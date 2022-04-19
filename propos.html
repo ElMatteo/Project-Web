@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=0.1">
+	<title>A propos/Contact</title>
+	<link rel="stylesheet" href="style/style2.css">
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<div class="menuNavbar">
+		<input type="checkbox" id="ham-menu">
+		<label for="ham-menu">
+		  <div class="hide-des">
+			<span class="menu-line"></span>
+			<span class="menu-line"></span>
+			<span class="menu-line"></span>
+			<span class="menu-line"></span>
+			<span class="menu-line"></span>
+			<span class="menu-line"></span>
+		  </div>
+		</label>
+		<div class="full-page-green"></div>
+		<div class="ham-menu">
+		  <ul class="centre-text bold-text">
+			<li><a href="index.html" class="menu">Accueil</a></li>
+			<li><a href="BiographieElonMusk.html" class="menu">Biographie</a></li>
+			<li><a href="creations.html" class="menu">Créations</a></li>
+			<li><a href="propos.html" class="menu-active">Contact</a></li>
+		  </ul>
+		</div>
+</div>
+
+	<section class="contact"> 
+		<div class="content">
+			<h2>Contactez-nous</h2>
+			<p>Nous sommes deux élèves de L3 New au sein de l'EFREI Paris. Ce site web est un projet du cours de programmation WEB. Matteo Clabassi s'est occupé de la page d'accueil, ainsi que de la barre de navigation et de la page des créations. Hugo Anceaux s'est occupé de la page de contact, du pied de page ainsi que de la page biographique.
+		</div>
+		<div class="container">
+			<div class="contactInfo">
+				<div class="box">
+					<div class="containerImg">
+						<img class="imageContact" src="img/ours.jfif" alt="Ours"/>
+						<div class="middleImg">
+						  <div class="textImg">Elève ingénieur à EFREI en L3 New
+						  <a class="aImg" href="https://www.linkedin.com/feed/" target="_blank"><img class="logoLinkedin" src="img/linkedin.png" alt="logo linkedin"></a>
+						</div>
+						</div>
+					</div>
+						<div class="text">
+							<p class="nom">Hugo Anceaux</p>
+						</div>			
+				</div>	
+				<div class="box">
+					<div class="containerImg">
+						<img class="imageContact" src="img/lémurien.jpg" alt="Ours"/>
+						<div class="middleImg">
+						  <div class="textImg">Elève ingénieur à EFREI en L3 New
+							  <a class="aImg" href="https://www.linkedin.com/feed/" target="_blank"><img class="logoLinkedin" src="img/linkedin.png" alt="logo linkedin"></a>
+						</div>
+						</div>
+					</div>
+						<div class="text">
+							<p class="nom">Matteo Clabassi</p>
+						</div>			
+				</div>
+			</div>
+			<div class="contactForm">
+				<form name="formulaire">
+					<h2>Envoyer nous un message</h2>
+					<div class="inputBox">
+						<input type="text" name="nom" required="required">
+						<span>Nom</span>
+					</div>
+					
+					<div class="inputBox">
+						<input type="text" name="prenom" required="required">
+						<span>Pr&eacute;nom</span>
+					</div>
+					
+					<div class="inputBox">
+						<input type="email" name="email" required="required">
+						<span>Email</span>
+					</div>
+					
+					<div class="inputBox">
+						<textarea required="required" name="message"></textarea>
+						<span>Message</span>
+					</div>
+					
+					<div class="buttonForm">
+						<div class="inputBoxSubmit">
+							<input type="button" id="button" name="envoyer" value="Envoyer" onClick="Remplir()">
+						</div>
+						
+						<div class="inputBoxReset">
+							<input type="reset" name="annuler" value="Annuler">
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</section>
+	
+	<section class="tablePrintMessage">
+		<div class="dynamicTable">
+				<h2 id="titreTable">Liste des messages</h2>
+			<table id="tableau">
+			  <tr>
+				<th id="tableNom">Nom</th>
+				<th class="tableDate">Date</th>
+				<th id="tableMess">Messages</th>
+				<th id="deleteMess"></th>
+			  </tr>
+
+			</table>
+		</div>
+	</section>	
+<script>
+	var currentdate = new Date();
+
+	
+	var h = currentdate.getHours();
+	if (h < 10) {h = "0" + h}
+	
+	var mn = currentdate.getMinutes();
+	if (mn < 10) {mn = "0" + mn}
+	
+	var s = currentdate.getSeconds();
+	if (s < 10) {s = "0" + s}
+	
+	var day = currentdate.getDay();
+	if (day < 10) {day = "0" + day}
+	
+	var month = currentdate.getMonth();
+	if (month < 10) {month = "0" + month}
+	
+	var datetime = day + "/" + month
+	+ "/" + currentdate.getFullYear() + " \n " 
+	+ h + "h" 
+	+ mn + "min"
+	+ s+ "s";
+
+	function Remplir() {
+		var nb_col = 4
+		
+		var resultat = document.forms.formulaire
+		newtr = document.createElement("tr")
+
+		for (var i=1; i<=nb_col; i++)
+			this["td"+i]=document.createElement('td')
+
+		td1.textContent = resultat.elements.prenom.value
+		td1.textContent += " " + resultat.elements.nom.value
+		td2.textContent = datetime
+		td3.textContent = resultat.elements.message.value
+		td4.innerHTML = "<input type='button' id='delete' name='supprimer' value='X' onClick='supprimer(this)'/>"
+
+		for (i=1; i<=nb_col; i++)
+			newtr.append(this["td"+i])
+
+		document.querySelector("table").appendChild(newtr)
+	}
+
+	function supprimer(r) {
+		var i = r.parentNode.parentNode.rowIndex;
+		document.querySelector("table").deleteRow(i);
+	}
+
+</script>
+<footer>
+	<p>© 2021 Site Biographique <br>    
+	<a id="link" href="propos.html">Nous contacter : cliquer ici</a></p>
+</footer>
+</body>
+</html>

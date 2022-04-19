@@ -1,0 +1,475 @@
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Arial", sans-serif;
+
+}
+
+.contact
+{
+font-family: "Arial", sans-serif;
+position: relative;
+min-height: 100vh;
+padding-bottom: 50px;
+padding-left: 100px;
+padding-right: 100px;
+padding-top: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #f2f3ee;
+}
+
+.contact .content
+{
+max-width:800px;
+text-align: center;
+}
+
+.contact .content h2
+{
+font-size: 30px;
+padding-bottom: 20px;
+font-weight:200;
+color: #09bcd9;
+}
+
+.contact .content p
+{
+font-family: "Arial", sans-serif;
+font-weight:200;
+color: black;
+font-size: 4ch;
+}
+
+.container
+{
+width: 100%; /* permet de rapprocher les deux divs : formulaire et la contactcInfo  */
+display: flex;
+align-items: center;
+margin-top: 30px;
+
+}
+
+.container .contactInfo
+{
+width: 100%;
+display: flex;
+flex-direction: row;
+margin-right: 4%;
+}
+
+
+.container .contactInfo .box
+{
+position: relative;
+padding: 40px 0;
+display: flex;
+}
+/*
+.container .contactInfo .box .icon
+{
+min-width:60px;
+height:60px;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+font-size: 22px;
+}
+*/
+.container .contactInfo .box .text
+{
+
+display: flex;
+text-align: center;
+font-size:16px;
+color: black;
+flex-direction: column;
+font-weight: 200;
+
+}
+
+.container .contactInfo .box .text p
+{
+font-family: "Arial", sans-serif;
+}
+
+.container .contactInfo .box .text h3
+{
+font-weight: 200;
+color:#00bcd4;
+}
+
+.contactForm
+{
+width: 100%;
+padding: 30px;
+background: #fff;
+}
+
+.contactForm h2
+{
+font-size: 28px;
+color: #333;
+font-weight: 200;
+}
+
+.contactForm .inputBox
+{
+position: relative;
+width: 100%;
+margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+width: 100%;
+padding: 7px 0px;
+font-size: 16px;
+margin: 10px 0;
+border: none;
+border-bottom: 2px solid #333;
+outline: none;
+resize: none;
+overflow: auto;
+}
+
+.contactForm .inputBox span
+{
+position: absolute;
+left: 0;
+padding: 0px;
+font-size:16px;
+margin: 18px 0;
+pointer-events: none;
+transition: 0.5s;
+color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox input[type="email"]:focus ~ span,
+.contactForm .inputBox input[type="email"]:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+color: #e91e63;
+font-size: 14px;
+transform: translateY(-22px);
+}
+
+.buttonForm
+{
+	display: flex;
+	position: relative;
+
+}
+
+input[type="button"],
+input[type="reset"]
+{
+	/*width: 100px;*/
+	/*margin-left: 18%;*/
+	background: #00bcd4;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+	
+}
+
+input[type="button"]:hover,
+input[type="reset"]:hover
+{
+	color: rgb(51,51,51);
+}
+
+.inputBoxReset
+{
+	width: 50%;
+	text-align: right;
+}
+
+.inputBoxSubmit 
+{
+	width: 50%;
+	text-align: left;
+}
+
+
+
+
+@media (max-width: 1300px)
+{
+	.contactForm
+	{
+		width: 100%;
+	}
+	
+	.container
+	{
+		flex-direction: column;
+	}
+	
+	.container .contactInfo
+	{
+		margin-bottom: 40px;
+	}
+	
+	.container .contactInfo, .contactForm
+	{
+		width: 100%;
+	}
+	
+	.contactForm .inputBox input[type="button"],
+	.contactForm .inputBox input[type="reset"]
+	{
+	margin-left: 5%;
+	}
+}
+
+
+/*Habillage tableau*/
+
+.tablePrintMessage
+{
+padding: 50px 100px;
+background-color: #f2f3ee;
+}
+
+#tableMess {
+	width: 80%;
+}
+
+.tableDate, #tableMess
+{
+	border-left: 2px solid #f2f3ee;;
+}
+
+#tableNom
+{
+	padding-left: 2em;
+	padding-right: 2em;
+	max-width: 20em;
+}
+
+table {
+  width: 98%;
+  margin: 5px 10px 5px 10px;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+  font-size: 15px ;
+  border-bottom: 2px solid rgb(190,190,190);
+
+}
+
+td {
+  border-top: 2px solid rgb(190,190,190);
+  padding: 10px 20px;
+  max-width: 20em;
+}
+
+th {
+  background-color: rgb(235,235,235);
+  padding: 10px 20px;
+}
+
+td {
+  text-align: center;
+}
+
+/*td du tableau de la biographie*/
+.eventBio
+{
+	text-align: left;
+}
+
+#titreTable
+{
+	font-size: 30px;
+	padding-bottom: 20px;
+	font-weight:200;
+	color: #00bcd4;
+	text-align: center;
+}
+
+
+/*Hover des images ainsi que le placements*/
+.containerImg {
+	width: 100%;
+  }
+  
+  .imageContact {
+	transition: .5s ease;
+	margin: 10px;
+  }
+  
+  .middleImg {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+  }
+  
+  .containerImg:hover .imageContact {
+	opacity: 0.3;
+  }
+  
+  .containerImg:hover .middleImg {
+	opacity: 1;
+  }
+  
+  .textImg {
+	background-color: rgb(140,164,143);
+	border-radius: 20%;
+	color: white;
+	font-size: 16px;
+	padding-top: 6px;
+	padding-right: 19px;
+	padding-left: 19px;
+	padding-bottom: 0px;
+  }
+
+  .logoLinkedin {
+	width: 40px;
+	height: auto;
+  }
+
+  /* Footer */
+
+  footer 
+{
+  border-top: 1px solid black;
+  background: rgba(0, 0, 0, 0.726);
+  color: rgb(145, 141, 141);
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  font-size: 10px;
+}
+
+#link
+{
+	color: rgb(145, 141, 141);
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+	font-weight: 100;
+	font-family: "Arial", sans-serif;	
+	font-size: 10px;
+	letter-spacing: normal	 ;
+}
+
+
+/*Boutton de suppression d'une ligne*/
+#delete
+{
+	font-size: x-small;
+	width: 20px;
+    height: 20px;
+    border-radius: 20px;	
+	padding: 2px;
+} 
+
+
+
+/*page Biographie*/
+
+/*titres*/
+
+.titleBio
+{
+text-align: center;
+font-size: 30px;
+font-weight: bold;
+color: #09bcd9;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+/*Sous titres*/
+.subtitleBio
+{
+	font-size: 27px;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	margin: 12px auto;
+	height: 40px;
+	max-width: 280px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.contentBio
+{
+	text-align: justify;
+	font-family: "Arial", sans-serif;
+    font-weight: 200;
+    color: black;
+    font-size: 20px;
+	padding: 27px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.subsubtitleBio
+{
+	font-size: 25px;
+	font-weight: 200;
+	padding-left: 25px;
+	padding-top: 15px;
+	padding-bottom: 12px ;
+	margin-left: 60px;
+}
+
+/*Aligner les blocs activités entrepreunariales*/
+
+.buttonCreate
+{
+	display: flex;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.buttonCreate1
+{
+	padding: 80px;
+	display: flex;
+	
+}
+
+.buttonCreate .subtitleBio
+{
+	display: inline-block;
+}
+
+.buttonCreate .subtitleBio:hover
+{
+	color: black;
+}
+
+.buttonCreate1 .subtitleBio
+{
+	display: inline-block;
+}
+
+/*source*/
+#source
+{
+	padding-left: 12px;
+	margin-left: 60px;
+}
